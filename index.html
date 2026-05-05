@@ -3,31 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Page description">
-    <title>Page Title</title>
+    <meta name="description" content="Student Assignment Organizer & Planner">
+    <title>Student Organizer - Assignment Manager</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+    <!-- Header with Navigation -->
+    <header class="header">
+        <div class="header-container">
+            <h1 class="logo">📚 Student Organizer</h1>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#dashboard" class="nav-link">Dashboard</a></li>
+                    <li><a href="#assignments" class="nav-link">Assignments</a></li>
+                    <li><a href="#classes" class="nav-link">Classes</a></li>
+                    <li><a href="#schedule" class="nav-link">Schedule</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <section id="home">
-            <h2>Home Section</h2>
-            <p>Your content goes here.</p>
-        </section>
-    </main>
+    <div class="container">
+        <!-- Sidebar - Class List -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h2>Classes</h2>
+                <ul class="class-list" id="classList">
+                    <li class="class-item">
+                        <span class="class-name">Intro to Web Dev</span>
+                        <span class="assignment-count">3</span>
+                    </li>
+                    <li class="class-item">
+                        <span class="class-name">Data Structures</span>
+                        <span class="assignment-count">2</span>
+                    </li>
+                    <li class="class-item">
+                        <span class="class-name">English Composition</span>
+                        <span class="assignment-count">1</span>
+                    </li>
+                </ul>
+                <button class="btn-add-class">+ Add Class</button>
+            </div>
 
-    <footer>
-        <p>&copy; 2026 Your Name. All rights reserved.</p>
+            <div class="sidebar-section">
+                <h2>Quick Stats</h2>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Total Assignments</span>
+                        <span class="stat-value">6</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Due Soon</span>
+                        <span class="stat-value">2</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Completed</span>
+                        <span class="stat-value">4</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Daily Quote Section -->
+            <section class="quote-section">
+                <p class="quote-text">"The only way to do great work is to love what you do." - Steve Jobs</p>
+                <button class="btn-quote-refresh">New Quote</button>
+            </section>
+
+            <!-- Assignments Section -->
+            <section class="assignments-section">
+                <div class="section-header">
+                    <h2>Your Assignments</h2>
+                    <button class="btn-add-assignment">+ Add Assignment</button>
+                </div>
+
+                <div class="assignment-filters">
+                    <select id="priorityFilter" class="filter-select">
+                        <option value="">All Priorities</option>
+                        <option value="high">High Priority</option>
+                        <option value="medium">Medium Priority</option>
+                        <option value="low">Low Priority</option>
+                    </select>
+                    <select id="classFilter" class="filter-select">
+                        <option value="">All Classes</option>
+                        <option value="1">Intro to Web Dev</option>
+                        <option value="2">Data Structures</option>
+                        <option value="3">English Composition</option>
+                    </select>
+                </div>
+
+                <div class="assignments-list" id="assignmentsList">
+                    <!-- Assignment Cards will be populated here by JavaScript -->
+                    <div class="assignment-card">
+                        <div class="card-header">
+                            <h3>Build HTML/CSS Form</h3>
+                            <span class="priority-badge high">High</span>
+                        </div>
+                        <p class="class-label">Intro to Web Dev</p>
+                        <p class="due-date">Due: March 15, 2026</p>
+                        <p class="days-until">3 days remaining</p>
+                        <div class="card-actions">
+                            <button class="btn-small btn-edit">Edit</button>
+                            <button class="btn-small btn-delete">Delete</button>
+                        </div>
+                    </div>
+
+                    <div class="assignment-card">
+                        <div class="card-header">
+                            <h3>Array Sorting Algorithm</h3>
+                            <span class="priority-badge medium">Medium</span>
+                        </div>
+                        <p class="class-label">Data Structures</p>
+                        <p class="due-date">Due: March 20, 2026</p>
+                        <p class="days-until">8 days remaining</p>
+                        <div class="card-actions">
+                            <button class="btn-small btn-edit">Edit</button>
+                            <button class="btn-small btn-delete">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gamification Section (Garden) -->
+            <section class="garden-section">
+                <h2>Your Garden 🌱</h2>
+                <p class="garden-description">Grow your garden by completing assignments!</p>
+                <div class="garden" id="garden">
+                    <div class="plant">🌻</div>
+                    <div class="plant">🌿</div>
+                    <div class="plant">🌱</div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Student Organizer. Made for learning web development.</p>
+        <p class="footer-note">Phase 1: Foundation - HTML & CSS Basics</p>
     </footer>
+
+    <!-- JavaScript will be linked here in Phase 2 -->
+    <!-- <script src="js/app.js"></script> -->
 </body>
 </html>
