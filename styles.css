@@ -385,7 +385,7 @@ body {
 }
 
 /* Garden Section */
-.garden-section {
+/* .garden-section {
   background-color: white;
   border: 1px solid var(--border-color);
   border-radius: 8px;
@@ -419,6 +419,177 @@ body {
 
 .plant:hover {
   transform: scale(1.1);
+} */
+ /* Garden Section */
+.garden-section {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border: 2px solid var(--secondary-color);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
+  margin-top: 2rem;
+}
+
+.garden-section h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.75rem;
+  color: var(--secondary-color);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.garden-description {
+  color: var(--text-light);
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.garden {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  border: 1px dashed var(--secondary-color);
+  min-height: 250px;
+  position: relative;
+  overflow: hidden;
+}
+
+.garden::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 90% 80%, rgba(16, 185, 129, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.plant {
+  font-size: 4rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 2px solid rgba(16, 185, 129, 0.2);
+}
+
+.plant:hover {
+  transform: scale(1.15) translateY(-5px);
+  background-color: rgba(16, 185, 129, 0.1);
+  border-color: var(--secondary-color);
+  box-shadow: 0 8px 16px rgba(16, 185, 129, 0.2);
+}
+
+.plant::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  margin-bottom: 0.5rem;
+}
+
+.plant:hover::after {
+  opacity: 1;
+}
+
+/* Plant growth stages */
+.plant.stage-1 {
+  animation: pop-in 0.5s ease-out;
+}
+
+.plant.stage-2 {
+  animation: pop-in 0.5s ease-out;
+}
+
+.plant.stage-3 {
+  animation: pop-in 0.5s ease-out;
+}
+
+@keyframes pop-in {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Garden water drop animation */
+.garden::after {
+  content: '💧';
+  position: absolute;
+  font-size: 1.5rem;
+  animation: float 3s ease-in-out infinite;
+  top: 10px;
+  right: 20px;
+  opacity: 0.7;
+  z-index: 2;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Garden completion stats */
+.garden-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.garden-stat {
+  text-align: center;
+}
+
+.garden-stat-label {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.garden-stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--secondary-color);
 }
 
 /* Footer */
